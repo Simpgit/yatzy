@@ -1,11 +1,19 @@
-let values = [];
+
 
 let throwCount = 0;
 
-function diceThrow(holdStatus){
-    for(let i = 0; i <= values.length; i++){
-        if(!holdStatus){
-            values[i] = Math.floor(Math.random() * 6) + 1;
+function createDice() {
+  return { value: 1, hold: false };
+}
+
+let dice = [];
+for (let i = 0; i < 5; i++) dice.push(createDice());
+
+
+function diceThrow(){
+    for(let i = 0; i < dice.length; i++){
+        if(!dice[i].hold){
+            dice[i].value = Math.floor(Math.random() * 6) + 1;
         }
     }
     throwCount++
@@ -20,20 +28,21 @@ function getValues(){
 function getResults(){
     let resultater = [];
 
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 1; i <= 6; i++) {
             resultater.push(sameValuePoints(i));
     }
 
     resultater.push(onePairPoints());
     resultater.push(twoPairPoints());
-    resultater.push(threeSamePoints());
-    resultater.push(fourSamePoints());
+    resultater.push(threeOfAKindPoints());
+    resultater.push(fourOfAKindPoints());
     resultater.push(fullHousePoints());
     resultater.push(smallStraightPoints());
     resultater.push(largeStraightPoints());
     resultater.push(chancePoints());
     resultater.push(yatzyPoints());
 
+    return resultater;
 
 }
 
@@ -49,11 +58,12 @@ function frequency() {
 }
 
 function sameValuePoints(value){
-    let resultat
+    let resultat = 0
+    let values = getValues()
 
     for(let i = 0; i < 5; i++){
         if (value == values[i]) {
-            res += value;
+            resultat += value;
         }
         return resultat 
     }
@@ -107,7 +117,7 @@ function fullHousePoints(){
 }   
 
 function smallStraightPoints(){
-    let frekvenser = frekvens();    
+    let frekvenser = frequency();    
     if (frekvenser[1] == 1 && frekvenser[2] == 1 && frekvenser[3] == 1 && frekvenser[4] == 1 && frekvenser[5] == 1){
         return 15;
     }
@@ -115,7 +125,7 @@ function smallStraightPoints(){
 }
 
 function largeStraightPoints(){
-    let frekvenser = frekvens();    
+    let frekvenser = frequency();    
     if (frekvenser[2] == 1 && frekvenser[3] == 1 && frekvenser[4] == 1 && frekvenser[5] == 1 && frekvenser[6] == 1){
         return 20;
     }
@@ -124,6 +134,8 @@ function largeStraightPoints(){
 
 function chancePoints(){
     let resultat = 0;
+    let values = getValues()
+
     for(let i = 0; i < 5; i++){
         resultat += values[i];
     }       
