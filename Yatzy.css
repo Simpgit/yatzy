@@ -1,35 +1,70 @@
 
 .container {
-    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
 }
 
 .boxdice {
-    width: 650px;
-    height: 150px;
-    background-color: lightblue;
+    width: 750px;
+    background: lightblue;
     border: 2px solid black;
-    padding: 10px;
-    margin: 10px;
-    display: flex;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 12px;
 }
 
 .boxscore {
-    width: 650px;
-    height: 500px;
-    background-color: lightblue;
+    width: 750px;
+    background: lightblue;
     border: 2px solid black;
-    padding: 10px;
-    margin: 10px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 12px;
 }
 
 .innercontainer {
     width: 100px;
     height: 100px;
-    border: 1px solid black;
+    background: white;
+    border: 2px solid black;
+    border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    border-radius: 20%;
-    padding: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+.dice-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.roll {
+    padding: 10px 30px;
+    font-size: 16px;
+    background-color: grey;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 6px;
 }
