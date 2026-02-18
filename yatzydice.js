@@ -11,6 +11,10 @@ for (let i = 0; i < 5; i++) dice.push(createDice());
 
 
 function diceThrow(){
+    if(throwCount >=3){
+        return
+    }
+
     for(let i = 0; i < dice.length; i++){
         if(!dice[i].hold){
             dice[i].value = Math.floor(Math.random() * 6) + 1;
@@ -64,14 +68,15 @@ function sameValuePoints(value){
     for(let i = 0; i < 5; i++){
         if (value == values[i]) {
             resultat += value;
+    
         }
-        return resultat 
+        
     }
-    return 0;
+    return resultat
 }
 
 function onePairPoints(){
-     for (let i = 6; i >= 0; i--) {
+     for (let i = 6; i >= 1; i--) {
             if (frequency()[i] >=2){
                 return i *2;
             }
@@ -80,9 +85,9 @@ function onePairPoints(){
 }
 
 function twoPairPoints(){
-    let resultat
+    let resultat = 0
 
-     for (let i = (onePairPoints()/2)-1; i >= 0 ; i--) {
+     for (let i = (onePairPoints()/2)-1; i >= 1 ; i--) {
             if (frequency()[i] >=2){
                   resultat = i *2;
                 return onePairPoints() + resultat;
@@ -92,7 +97,7 @@ function twoPairPoints(){
 }
 
 function threeOfAKindPoints(){
-    for (let i = 6; i >= 0; i--) {
+    for (let i = 6; i >= 1; i--) {
             if (frequency()[i] >=3){
                 return i *3;
             }
@@ -101,7 +106,7 @@ function threeOfAKindPoints(){
 }
 
 function fourOfAKindPoints(){
-    for (let i = 6; i >= 0; i--) {
+    for (let i = 6; i >= 1; i--) {
             if (frequency()[i] >=4){
                 return i *4;
             }
@@ -143,7 +148,7 @@ function chancePoints(){
 }
 
 function yatzyPoints(){
-    for (let i = 6; i >= 0; i--) {
+    for (let i = 6; i >= 1; i--) {
             if (frequency()[i] >=5){
                 return 50;
             }
