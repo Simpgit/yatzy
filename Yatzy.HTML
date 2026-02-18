@@ -8,13 +8,99 @@
 <body>
     <div class="container">
         <div class="boxdice">
-            <div class="innercontainer" id="dice1"></div>
-            <div class="innercontainer" id="dice2"></div>
-            <div class="innercontainer" id="dice3"></div>
-            <div class="innercontainer" id="dice4"></div>
-            <div class="innercontainer" id="dice5"></div>
+            <div class="dice-row">
+                <div class="innercontainer" id="dice1"></div>
+                <div class="innercontainer" id="dice2"></div>
+                <div class="innercontainer" id="dice3"></div>
+                <div class="innercontainer" id="dice4"></div>
+                <div class="innercontainer" id="dice5"></div>
+            </div>
+            
+            <div class="bottom-row">
+                <span>Throws left: <span id="throws">3</span></span>
+                <button id="roll-button" class="roll">Throw</button>
+            </div>
+        </div>  
+    
+        <div class="boxscore">
+            <table>
+            <tr>
+                <td>1-s</td>
+                <td id="score-1s"></td>
+                <td><input type="text" id="input1s" title="input1s" readonly/></td>
+            </tr>
+            <tr>
+                <td>2-s</td>
+                <td id="score-2s"></td>
+                <td><input type="text" id="input2s" title="input2s" readonly/></td>
+            </tr>
+            <tr>
+                <td>3-s</td>
+                <td id="score-3s"></td>
+                <td><input type="text" id="input3s" title="input3s" readonly/></td>
+            </tr>
+            <tr>
+                <td>4-s</td>
+                <td id="score-4s"></td>
+                <td><input type="text" id="input4s" title="input4s" readonly/></td>
+            </tr>
+            <tr>
+                <td>5-s</td>
+                <td id="score-5s"></td>
+                <td><input type="text" id="input5s" title="input5s" readonly/></td>
+            </tr>
+            <tr>
+                <td>6-s</td>
+                <td id="score-6s"></td>
+                <td><input type="text" id="input6s" title="input6s" readonly/></td>
+            </tr>
+            <tr>
+                <td>One Pair</td>
+                <td id="score-OnePair"></td>
+                <td><input type="text" id="inputOnePair" title="inputOnePair" readonly/></td>
+            </tr>
+            <tr>
+                <td>Two Pairs</td>
+                <td id="score-TwoPairs"></td>
+                <td><input type="text" id="inputTwoPair" title="inputTwoPair" readonly/></td>
+            </tr>
+            <tr>
+                <td>Three-same</td>
+                <td id="score-ThreeSame"></td>
+                <td><input type="text" id="inputThreeSame" title="inputThreeSame" readonly/></td>
+            </tr>
+            <tr>
+                <td>Four-same</td>
+                <td id="score-FourSame"></td>
+                <td><input type="text" id="inputFourSame" title="inputFourSame" readonly/></td>
+            </tr>
+            <tr>
+                <td>Full House</td>
+                <td id="score-FullHouse"></td>
+                <td><input type="text" id="inputFullHouse" title="inputFullHouse" readonly/></td>
+            </tr>
+            <tr>
+                <td>Small Straight</td>
+                <td id="score-SmallStraight"></td>
+                <td><input type="text" id="inputSmallStraight" title="inputSmallStraight" readonly/></td>
+            </tr>
+            <tr>
+                <td>Large Straight</td>
+                <td id="score-LargeStraight"></td>
+                <td><input type="text" id="inputLargeStraight" title="inputLargeStraight" readonly/></td>
+            </tr>
+            <tr>
+                <td>Yatzy</td>
+                <td id="score-Yatzy"></td>
+                <td><input type="text" id="inputYatzy" title="inputYatzy" readonly/></td>
+            </tr>
+            <tr>
+                <td>Chance</td>
+                <td id="score-Chance"></td>
+                <td><input type="text" id="inputChance" title="inputChance" readonly/></td>
+            </tr>
+        </table>
         </div>
-        <div class="boxscore">empty box</div>
     </div>
 </body>
 </html>
